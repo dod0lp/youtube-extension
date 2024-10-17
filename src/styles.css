@@ -1,0 +1,27 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+#speedDiv,
+#qualityDiv {
+    margin-bottom: 20px;
+}
+
+button {
+    margin-right: 10px;
+}
+
+input[type="text"] {
+    padding: 5px;
+    width: 100px;
+}
+
+.checkbox-group {
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+label {
+    display: block;
+}

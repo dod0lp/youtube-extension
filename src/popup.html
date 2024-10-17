@@ -1,17 +1,25 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <title>YouTube setter</title>
-  </head>
-  <body>
-    <div id="qualityDiv" style="margin-bottom: 10px;">
-        <button id="setQualityBtn">Quality command</button>
-        <script src="popup_quality.js"></script>
-    </div>
+    <link rel="stylesheet" href="styles.css">
+    <script src="popup.js" defer></script>
+</head>
+
+<body>
 
     <div id="speedDiv">
-        <button id="setSpeedBtn" style="margin-bottom: 10px;">Speed command</button>
-        <script src="./popup_speed.js"></script>
+        <button id="setSpeedBtn">Speed</button>
+        <input type="text" id="speedInput" placeholder="Enter speed">
     </div>
-  </body>
+
+    <div id="qualityDiv">
+        <button id="setQualityBtn">Quality</button>
+        <div class="checkbox-group" id="qualityCheckboxes"></div>
+        <script src="checkbox_quality_setup.js"></script>
+    </div>
+
+</body>
+
 </html>
