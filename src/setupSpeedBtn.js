@@ -5,7 +5,7 @@ function setSpeed(speedrate) {
 }
 
 function isValidFloat(value) {
-    const parsedValue = parseFloat(value);
+    const parsedValue = Number(value);
     
     return !isNaN(parsedValue) && isFinite(parsedValue);
 }
@@ -23,12 +23,12 @@ speedBtn.addEventListener('click', () => {
             speedValue = speedrateDefault;
         }
 
+        console.log(speedValue);
         chrome.scripting.executeScript({
             target: { tabId: activeTab.id },
             func: setSpeed,
             args: [speedValue]
         });
 
-        console.log(speedValue);
     });
 });
