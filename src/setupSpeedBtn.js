@@ -23,12 +23,10 @@ speedBtn.addEventListener('click', () => {
             speedValue = speedrateDefault;
         }
 
-        console.log(speedValue);
         chrome.scripting.executeScript({
             target: { tabId: activeTab.id },
             func: setSpeed,
             args: [speedValue]
         });
-
     });
 });
