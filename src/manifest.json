@@ -1,0 +1,17 @@
+{
+    "manifest_version": 3,
+    "name": "Youtube Automatic Setup",
+    "version": "0.9",
+    "description": "Sets YouTube playback speed and Quality by clicking on extension.",
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "host_permissions": [
+        "*://*.youtube.com/*"
+    ],
+    "permissions": [
+        "activeTab",
+        "scripting"
+    ]
+  }
+  
