@@ -5,7 +5,7 @@ function setSpeed(speedrate) {
 }
 
 function isValidFloat(value) {
-    const parsedValue = Number(value);
+    const parsedValue = parseFloat(value);
     
     return !isNaN(parsedValue) && isFinite(parsedValue);
 }
@@ -19,7 +19,7 @@ speedBtn.addEventListener('click', () => {
         const activeTab = tabs[0];
 
         let speedValue = document.getElementById('speedInput').value;
-        if (!isValidFloat(speedValue)) {
+        if (!isValidFloat(speedValue) || Number(speedValue) < minSpeedrateThreshold) {
             speedValue = speedrateDefault;
         }
 
