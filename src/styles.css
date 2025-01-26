@@ -8,11 +8,20 @@ body {
     margin-bottom: 10px;
 }
 
-button {
-    margin-right: 10px;
+#speedDiv button {
+    width: 100%;
+    height: auto;
+    margin-bottom: 2px;
+}
+
+#qualityDiv button {
+    width: 100%;
+    height: auto;
+    margin-bottom: 2px;
 }
 
 input[type="text"] {
-    width: 50px;
-    height: 15px;
+    width: 75px;
+    height: auto;
+    margin-bottom: 2px;
 }

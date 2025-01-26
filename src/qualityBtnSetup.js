@@ -47,7 +47,7 @@ function setVideoQuality(targetQuality) {
     const videoplayer = document.getElementById('movie_player');
     const qualityLevels = videoplayer.getVideoPlaybackQuality().qualityLevels;
 
-    // Efficient check for avaible qualities and to unset current
+    // Inefficient check for avaible qualities and to unset current
     for (let i = 0; i < qualityLevels.length; i++) {
         if (qualityLevels[i].name !== targetQuality) {
             qualityLevels[i].enabled = false;
@@ -76,7 +76,6 @@ qualityBtn.addEventListener('click', () => {
 
         if (checkedCheckbox) {
             let tempQuality = checkedCheckbox.value.trim();
-
             // ensure no tempering of value
             if (validQualities.includes(qualitySet)) {
                 qualitySet = tempQuality;
