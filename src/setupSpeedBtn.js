@@ -13,6 +13,42 @@ function isValidFloat(value) {
     return !isNaN(parsedValue) && isFinite(parsedValue);
 }
 
+
+/* Default speed of 1 button */
+defaultSpeedBtn.addEventListener('click', () => {
+    chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+        if (tabs.length < 1) {
+            return;
+        }
+
+        const activeTab = tabs[0];
+
+        chrome.scripting.executeScript({
+            target: { tabId: activeTab.id },
+            func: setSpeed,
+            args: [1]
+        });
+    });
+});
+
+/* Default speed of 2.5 button*/
+defaultFastSpeedBtn.addEventListener('click', () => {
+    chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+        if (tabs.length < 1) {
+            return;
+        }
+
+        const activeTab = tabs[0];
+
+        chrome.scripting.executeScript({
+            target: { tabId: activeTab.id },
+            func: setSpeed,
+            args: [1]
+        });
+    });
+});
+
+/* Custom button, with default set to 2.5 */
 speedBtn.addEventListener('click', () => {
     chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
         if (tabs.length < 1) {
@@ -30,22 +66,6 @@ speedBtn.addEventListener('click', () => {
             target: { tabId: activeTab.id },
             func: setSpeed,
             args: [speedValue]
-        });
-    });
-});
-
-defaultSpeedBtn.addEventListener('click', () => {
-    chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-        if (tabs.length < 1) {
-            return;
-        }
-
-        const activeTab = tabs[0];
-
-        chrome.scripting.executeScript({
-            target: { tabId: activeTab.id },
-            func: setSpeed,
-            args: [1]
         });
     });
 });
