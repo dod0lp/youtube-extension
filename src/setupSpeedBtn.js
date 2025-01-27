@@ -26,7 +26,7 @@ defaultSpeedBtn.addEventListener('click', () => {
         chrome.scripting.executeScript({
             target: { tabId: activeTab.id },
             func: setSpeed,
-            args: [1]
+            args: [defaultSpeedrate]
         });
     });
 });
@@ -43,12 +43,12 @@ defaultFastSpeedBtn.addEventListener('click', () => {
         chrome.scripting.executeScript({
             target: { tabId: activeTab.id },
             func: setSpeed,
-            args: [1]
+            args: [defaultSpeedSpeedrate]
         });
     });
 });
 
-/* Custom button, with default set to 2.5 */
+/* Custom button, with default set to 1 */
 speedBtn.addEventListener('click', () => {
     chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
         if (tabs.length < 1) {
@@ -59,7 +59,7 @@ speedBtn.addEventListener('click', () => {
 
         let speedValue = document.getElementById('speedInput').value;
         if (!isValidFloat(speedValue) || Number(speedValue) < minSpeedrateThreshold) {
-            speedValue = defaultSpeedSpeedrate;
+            speedValue = defaultSpeedrate;
         }
 
         chrome.scripting.executeScript({
