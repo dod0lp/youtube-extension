@@ -1,0 +1,21 @@
+{
+    "manifest_version": 3,
+    "name": "Clear Cookies & Refresh",
+    "version": "0.1",
+    "description": "Clears cookies saved on this site and refreshes page.",
+    "permissions": [
+        "cookies",
+        "tabs",
+        "scripting",
+        "activeTab"
+    ],
+    "host_permissions": [
+        "<all_urls>"
+    ],
+    "action": {
+        "default_title": "Clear Cookies"
+    },
+    "background": {
+        "service_worker": "background.js"
+    }
+}
