@@ -1,6 +1,6 @@
 const checkboxContainer = document.getElementById('qualityCheckboxes');
 const qualityBtn = document.getElementById("setQualityBtn");
-const validQualities = [ 'hd2160', 'hd1440', 'hd1080', 'hd720', 'large', 'medium', 'small', 'tiny' ];
+const validQualities = ['hd2160', 'hd1440', 'hd1080', 'hd720', 'large', 'medium', 'small', 'tiny'];
 const qualityMap = {
     'hd2160': '2160p',
     'hd1440': '1440p',
@@ -13,7 +13,7 @@ const qualityMap = {
 };
 const remappedValidQualitiesList = validQualities.map(quality => qualityMap[quality]);
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     validQualities.forEach(quality => {
         const label = document.createElement('label');
         const checkbox = document.createElement('input');
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 // Ensure that only one checkbox can be checked using this efficient algorithm
-checkboxContainer.addEventListener('change', function(event) {
+checkboxContainer.addEventListener('change', function (event) {
     if (event.target.classList.contains('qualityOption')) {
         const checkboxes = checkboxContainer.querySelectorAll('.qualityOption');
         checkboxes.forEach(checkbox => {

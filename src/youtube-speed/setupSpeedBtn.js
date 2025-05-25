@@ -9,7 +9,7 @@ function setSpeed(speedrate) {
 
 function isValidFloat(value) {
     const parsedValue = parseFloat(value);
-    
+
     return !isNaN(parsedValue) && isFinite(parsedValue);
 }
 
